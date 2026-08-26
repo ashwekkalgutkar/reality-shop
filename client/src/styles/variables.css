@@ -1,0 +1,55 @@
+:root {
+  /* Color Palette */
+  --bg-app: #0a0c10;
+  --bg-surface: #12151e;
+  --bg-surface-hover: #181c28;
+  --bg-card: #141722;
+  --bg-card-subtle: #191c2b;
+  
+  /* Borders */
+  --border-color: rgba(255, 255, 255, 0.07);
+  --border-color-hover: rgba(255, 255, 255, 0.15);
+  --border-accent: rgba(99, 102, 241, 0.35);
+
+  /* Brand / Primary Accent */
+  --accent-primary: #6366f1;
+  --accent-primary-hover: #4f46e5;
+  --accent-primary-glow: rgba(99, 102, 241, 0.25);
+  --accent-bg-subtle: rgba(99, 102, 241, 0.1);
+
+  /* Status & Category Colors */
+  --color-view: #38bdf8;
+  --color-click: #a855f7;
+  --color-cart: #10b981;
+  --color-danger: #ef4444;
+
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-inverse: #0f172a;
+
+  /* Spacing Scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  /* Border Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 25px -5px rgba(99, 102, 241, 0.3);
+}

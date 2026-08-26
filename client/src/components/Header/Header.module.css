@@ -1,0 +1,119 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: var(--space-xl);
+}
+
+.brandGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.logoBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.15));
+  border: 1px solid var(--border-accent);
+  color: var(--accent-primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.actionsGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.statusIndicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--radius-full);
+  background-color: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-cart);
+}
+
+.pulseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-cart);
+  box-shadow: 0 0 8px var(--color-cart);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+}
+
+.refreshBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.refreshBtn:hover {
+  background-color: var(--bg-surface-hover);
+  color: var(--text-primary);
+  border-color: var(--border-color-hover);
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+  .actionsGroup {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

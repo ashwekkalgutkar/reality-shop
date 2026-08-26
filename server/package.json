@@ -1,0 +1,19 @@
+{
+  "name": "shoppable-video-analytics-server",
+  "version": "1.0.0",
+  "description": "Express backend for Shoppable Video Analytics Dashboard",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch-path=src src/index.js",
+    "seed": "node src/db/seed.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "shoppable-video-analytics": "file:.."
+  }
+}
