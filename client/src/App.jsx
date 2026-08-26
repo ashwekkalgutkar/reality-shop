@@ -9,6 +9,13 @@ import { AlertTriangle } from 'lucide-react';
 import styles from './App.module.css';
 
 export default function App() {
+  const [mousePos, setMousePos] = React.useState({ x: -500, y: -500 });
+  const containerRef = React.useRef(null);
+
+  const handleMouseMove = (e) => {
+    setMousePos({ x: e.clientX, y: e.clientY });
+  };
+
   const {
     data,
     page,
@@ -28,8 +35,27 @@ export default function App() {
   } = useAnalytics();
 
   return (
-    <div className={styles.appContainer}>
-      <Header onRefresh={refetch} isRefreshing={loading || isRefetching} />
+    <div 
+      ref={containerRef} 
+      className={styles.appWrapper} 
+      onMouseMove={handleMouseMove}
+    >
+      {/* Ambient background glow & mouse spotlight */}
+      <div className={styles.ambientBackground}>
+        <div className={styles.blobIndigo} />
+        <div className={styles.blobPurple} />
+      </div>
+
+      <div 
+        className={styles.mouseSpotlight} 
+        style={{ 
+          left: `${mousePos.x}px`, 
+          top: `${mousePos.y}px` 
+        }} 
+      />
+
+      <div className={styles.appContainer}>
+        <Header onRefresh={refetch} isRefreshing={loading || isRefetching} />
 
       {error && (
         <div className={styles.errorBanner}>
@@ -65,6 +91,7 @@ export default function App() {
         onPageChange={changePage}
         onLimitChange={changeLimit}
       />
+      </div>
     </div>
   );
 }

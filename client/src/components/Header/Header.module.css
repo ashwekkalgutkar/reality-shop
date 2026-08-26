@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--space-lg) 0;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   margin-bottom: var(--space-xl);
 }
 
@@ -17,13 +17,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.15));
-  border: 1px solid var(--border-accent);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(168, 85, 247, 0.2));
+  border: 1px solid rgba(99, 102, 241, 0.4);
   color: var(--accent-primary);
-  box-shadow: var(--shadow-glow);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
 }
 
 .titleContainer {
@@ -55,8 +55,8 @@
   gap: 0.5rem;
   padding: 0.375rem 0.75rem;
   border-radius: var(--radius-full);
-  background-color: rgba(16, 185, 129, 0.08);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  background-color: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--color-cart);
@@ -92,7 +92,8 @@
   gap: 0.5rem;
   padding: 0.5rem 0.875rem;
   border-radius: var(--radius-md);
-  background-color: var(--bg-surface);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
   border: 1px solid var(--border-color);
   color: var(--text-secondary);
   font-size: 0.8125rem;
@@ -106,7 +107,7 @@
   border-color: var(--border-color-hover);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .header {
     flex-direction: column;
     align-items: flex-start;
@@ -115,5 +116,8 @@
   .actionsGroup {
     width: 100%;
     justify-content: space-between;
+  }
+  .title {
+    font-size: 1.1rem;
   }
 }
