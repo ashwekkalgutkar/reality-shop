@@ -6,6 +6,9 @@ const EVENT_WEIGHTS = [
   { type: 'add_to_cart', weight: 0.15 }
 ];
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || '';
+
+
 function getRandomEventType() {
   const rand = Math.random();
   let cumulative = 0;
@@ -60,7 +63,7 @@ export function useAnalytics(initialPage = 1, initialLimit = 10) {
     setError(null);
 
     try {
-      const res = await fetch(`/api/analytics/videos?page=${targetPage}&limit=${targetLimit}`, {
+      const res = await fetch(`${API_BASE_URL}/api/analytics/videos?page=${targetPage}&limit=${targetLimit}`, {
         signal: controller.signal
       });
       
@@ -98,7 +101,7 @@ export function useAnalytics(initialPage = 1, initialLimit = 10) {
   // Fetch overall summary metrics
   const fetchSummary = useCallback(async () => {
     try {
-      const res = await fetch('/api/analytics/summary');
+      const res = await fetch(`${API_BASE_URL}/api/analytics/summary`);
       if (res.ok) {
         const json = await res.json();
         setSummary(json.data);
@@ -124,7 +127,7 @@ export function useAnalytics(initialPage = 1, initialLimit = 10) {
     let videoIds = data.map(v => v.id);
     if (videoIds.length === 0) {
       try {
-        const idsRes = await fetch('/api/analytics/video-ids');
+        const idsRes = await fetch(`${API_BASE_URL}/api/analytics/video-ids`);
         if (idsRes.ok) {
           const idsJson = await idsRes.json();
           videoIds = idsJson.data;
@@ -180,7 +183,7 @@ export function useAnalytics(initialPage = 1, initialLimit = 10) {
 
     try {
       // 2. POST /api/events
-      const response = await fetch('/api/events', {
+      const response = await fetch(`${API_BASE_URL}/api/events`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
