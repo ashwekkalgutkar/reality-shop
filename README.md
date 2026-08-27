@@ -4,6 +4,37 @@ A full-stack dashboard built for tracking shoppable video performance, event tel
 
 ---
 
+## 🔗 Quick Links & Demos
+
+| Resource | Link | Description |
+| :--- | :--- | :--- |
+| 🌐 **Live Deployed App** | [reality-shop-git-main-ashweks-projects.vercel.app](https://reality-shop-git-main-ashweks-projects.vercel.app/) | Live production web application |
+| 🎬 **YouTube Pitch Video** | [Watch on YouTube](https://youtu.be/WxFWAJp1G2Q) | Project pitch video presentation |
+| 📹 **Project Walkthrough** | [Watch on Google Drive](https://drive.google.com/file/d/1Z_3v2hFJWl_JRqzXFXSdmimZWdjjlecz/view?usp=sharing) | Full technical walkthrough & demo |
+
+---
+
+## 📸 Application Screenshots
+
+### 1. Main Dashboard View
+> Full-stack analytics directory displaying video engagement metrics, event simulator, and aggregate conversion telemetry.
+
+![Main Dashboard View](docs/images/dashboard-normal.png)
+
+### 2. Responsive Mobile Layout
+> Fully responsive user interface optimized across desktop, tablet, and mobile viewports.
+
+![Responsive Mobile Layout](docs/images/dashboard-responsive.png)
+
+### 3. Skeleton Loading State
+> Zero-layout-shift UI loading state utilizing CSS shimmer keyframe animations while fetching database records.
+
+![Skeleton Loading State](docs/images/dashboard-skeleton.png)
+
+---
+
+
+
 ## 🚀 Architectural Tradeoffs & Engineering Decisions
 
 ### 1. SQL Aggregation Strategy & Cartesian Product Prevention

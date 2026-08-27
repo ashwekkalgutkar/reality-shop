@@ -11,6 +11,7 @@ import styles from './App.module.css';
 export default function App() {
   const [mousePos, setMousePos] = React.useState({ x: -500, y: -500 });
   const containerRef = React.useRef(null);
+  const tableSectionRef = React.useRef(null);
 
   const handleMouseMove = (e) => {
     setMousePos({ x: e.clientX, y: e.clientY });
@@ -33,6 +34,20 @@ export default function App() {
     simulateTraffic,
     refetch
   } = useAnalytics();
+
+  const handlePageChange = (newPage) => {
+    changePage(newPage);
+    if (tableSectionRef.current) {
+      tableSectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const handleLimitChange = (newLimit) => {
+    changeLimit(newLimit);
+    if (tableSectionRef.current) {
+      tableSectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <div 
@@ -72,7 +87,7 @@ export default function App() {
 
       <MetricsSummary summary={summary} loading={loading} />
 
-      <div className={styles.tableHeaderSection}>
+      <div ref={tableSectionRef} className={styles.tableHeaderSection}>
         <div>
           <h2 className={styles.sectionTitle}>Video Performance Directory</h2>
           <span className={styles.sectionSubtitle}>
@@ -88,10 +103,11 @@ export default function App() {
         limit={limit}
         total={total}
         totalPages={totalPages}
-        onPageChange={changePage}
-        onLimitChange={changeLimit}
+        onPageChange={handlePageChange}
+        onLimitChange={handleLimitChange}
       />
       </div>
     </div>
   );
 }
+
